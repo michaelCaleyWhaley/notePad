@@ -1,0 +1,14 @@
+{
+  "name": "notesjs",
+  "version": "1.0.0",
+  "description": "A command line notes app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Caley",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^10.1.1"
+  }
+}
