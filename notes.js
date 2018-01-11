@@ -3,8 +3,8 @@
 
 
 module.exports.addNote = (message) => {
-	fs.writeFile('message.txt', message, (err)=>{
-		if(err) throw err;
+	fs.writeFile('message.txt', message, (err) => {
+		if (err) throw err;
 		console.log('this file has been saved');
 	});
-}
+};
