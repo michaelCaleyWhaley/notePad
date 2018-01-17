@@ -31,9 +31,20 @@ var addNote = (title, body) => {
 	} else {
 		console.log('A matching title was found');
 	}
-	
 };
 
+var deleteNote = (title) => {
+	var existingNotes;
+	try {
+		existingNotes = fs.readFileSync('notes-data.json');
+		existingNotes = JSON.parse(existingNotes);
+	} catch(e) {
+		console.log('Unable to find any notes');
+	}
+	console.log(existingNotes);
+}
+
 module.exports = {
-	addNote: addNote
+	addNote: addNote,
+	deleteNote: deleteNote
 }
