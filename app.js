@@ -8,7 +8,7 @@ var parsedArgv = argv.argv;
 if (parsedArgv._[0] === "addNote") {
 	notes.addNote(parsedArgv.title, parsedArgv.body);
 } else if (parsedArgv._[0] === "deleteNote") {
-	notes.deleteNote();
+	notes.deleteNote(parsedArgv.title);
 } else if(parsedArgv._[0] === "listNote"){
 	console.log('listing notes');
 } else if(parsedArgv._[0] === "readNote"){

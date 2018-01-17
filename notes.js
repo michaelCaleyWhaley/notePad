@@ -28,6 +28,7 @@ var addNote = (title, body) => {
 		notes.push(note);
 		notes = JSON.stringify(notes);
 		fs.writeFileSync('notes-data.json', notes);
+		console.log('Note succesfully saved');
 	} else {
 		console.log('A matching title was found');
 	}
@@ -35,13 +36,32 @@ var addNote = (title, body) => {
 
 var deleteNote = (title) => {
 	var existingNotes;
+	var noteRemoved = false;
+	// Searches for the note data
 	try {
 		existingNotes = fs.readFileSync('notes-data.json');
 		existingNotes = JSON.parse(existingNotes);
+
+		// loops through the returned array looking for a matching title
+		existingNotes.forEach((element) => {
+
+			if(element.title.toLowerCase() === title.toLowerCase()){
+				var index = existingNotes.indexOf(element);
+				existingNotes.splice(index, 1);
+				var newNotes = JSON.stringify(existingNotes);
+				fs.writeFileSync('notes-data.json', newNotes);
+				console.log('Note succesfully removed');
+				noteRemoved = true;
+			}
+
+		});
 	} catch(e) {
 		console.log('Unable to find any notes');
 	}
-	console.log(existingNotes);
+
+	if(noteRemoved === false){
+		console.log('No note matching that title was found');
+	}
 }
 
 module.exports = {
