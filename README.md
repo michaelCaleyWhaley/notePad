@@ -6,5 +6,7 @@ Also uses third party module Yargs for parsing arguments.
 
 // Example commands
 
-node app.js addNote --title="Example" --body="Some body"  node app.js deleteNote --title="Example"  node app.js readNote --title="Example"
+node app.js addNote --title="Example" --body="Some body"<br/>
+node app.js deleteNote --title="Example"<br/>
+node app.js readNote --title="Example"<br/>
 
