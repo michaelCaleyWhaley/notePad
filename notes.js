@@ -37,20 +37,15 @@ var addNote = (title, body) => {
 };
 
 var deleteNote = (title) => {
-	var existingNotes = fetchNotes();
-	var noteRemoved = false;
-	// loops through the returned array looking for a matching title
-	existingNotes.forEach((element) => {
-		if (element.title.toLowerCase() === title.toLowerCase()) {
-			var index = existingNotes.indexOf(element);
-			existingNotes.splice(index, 1);
-			saveNotes(existingNotes);
-			console.log('Note succesfully removed');
-			noteRemoved = true;
-		}
+	var notes = fetchNotes();
+	var filteredNotes = notes.filter((index) => {
+		return index.title.toLowerCase() !== title.toLowerCase();
 	});
-	if (noteRemoved === false) {
-		console.log('No note matching that title was found');
+	if(notes.length > filteredNotes.length){
+		saveNotes(filteredNotes);
+		console.log('Note successfully deleted');
+	} else {
+		console.log('Note not found');
 	}
 };
 
