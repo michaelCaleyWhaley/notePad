@@ -63,9 +63,20 @@ var readNote = (title) => {
 
 };
 
+var listNote = () => {
+	var notes = fetchNotes();
+	console.log(`Printing: ${notes.length} note(s).`);
+	console.log('--');
+	notes.forEach((index) => {
+		console.log(`${index.title} - ${index.body}`);
+		console.log('--');
+	});
+};
+
 module.exports = {
 	addNote: addNote,
 	deleteNote: deleteNote,
 	//es6 does not reuire function name if it is the same as object property
-	readNote
+	readNote,
+	listNote
 };

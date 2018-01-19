@@ -8,4 +8,5 @@ Also uses third party module Yargs for parsing arguments.
 node app.js addNote --title="Example" --body="Some body"<br/>
 node app.js deleteNote --title="Example"<br/>
 node app.js readNote --title="Example"<br/>
+node app.js listNote<br/>
 
