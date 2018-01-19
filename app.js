@@ -1,5 +1,5 @@
 
-const fs = require('fs');
+
 const argv = require('yargs');
 const notes = require('./notes.js');
 
@@ -12,7 +12,7 @@ if (parsedArgv._[0] === "addNote") {
 } else if(parsedArgv._[0] === "listNote"){
 	console.log('listing notes');
 } else if(parsedArgv._[0] === "readNote"){
-	console.log('reading notes');
+	notes.readNote(parsedArgv.title);
 } else {
 	console.log('Command not recognised');
 	console.log('Options include: addNote, deleteNote, listNote, readNote');

@@ -41,7 +41,7 @@ var deleteNote = (title) => {
 	var filteredNotes = notes.filter((index) => {
 		return index.title.toLowerCase() !== title.toLowerCase();
 	});
-	if(notes.length > filteredNotes.length){
+	if (notes.length > filteredNotes.length) {
 		saveNotes(filteredNotes);
 		console.log('Note successfully deleted');
 	} else {
@@ -49,7 +49,23 @@ var deleteNote = (title) => {
 	}
 };
 
+var readNote = (title) => {
+	var notes = fetchNotes();
+	var filteredNotes = notes.filter((index) => {
+		return index.title.toLowerCase() === title.toLowerCase();
+	});
+	if (filteredNotes.length > 0) {
+		console.log(`Title: ${filteredNotes[0].title}`);
+		console.log(`Body: ${filteredNotes[0].body}`);
+	} else {
+		console.log('Note not found');
+	}
+
+};
+
 module.exports = {
 	addNote: addNote,
-	deleteNote: deleteNote
+	deleteNote: deleteNote,
+	//es6 does not reuire function name if it is the same as object property
+	readNote
 };
