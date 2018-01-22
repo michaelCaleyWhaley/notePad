@@ -10,3 +10,7 @@ node app.js deleteNote --title="Example"<br/>
 node app.js readNote --title="Example"<br/>
 node app.js listNote<br/>
 
+## Alias commands
+
+Yargs parsing adds the ability to use short hand commands enabling commands such as addNote to be passed like the following<br/>
+node app.js addNote -t="Example" -b="Some body"

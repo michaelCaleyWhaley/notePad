@@ -60,7 +60,6 @@ var readNote = (title) => {
 	} else {
 		console.log('Note not found');
 	}
-
 };
 
 var listNote = () => {
